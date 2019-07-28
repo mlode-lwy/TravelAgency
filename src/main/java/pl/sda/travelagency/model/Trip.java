@@ -1,5 +1,6 @@
 package pl.sda.travelagency.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,6 +47,7 @@ public class Trip {
 
 
     @OneToMany(mappedBy = "trip")
+    @JsonIgnore
     private List<TripPurchase> listOfTripPurchases = new ArrayList<>();
 
 

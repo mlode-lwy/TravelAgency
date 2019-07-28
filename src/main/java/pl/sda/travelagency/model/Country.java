@@ -1,5 +1,6 @@
 package pl.sda.travelagency.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,7 @@ public class Country {
     private Continent continent;
 
     @OneToMany(mappedBy = "country")
+    @JsonIgnore
     private List<City> listOfCities = new ArrayList<>();
 
 }

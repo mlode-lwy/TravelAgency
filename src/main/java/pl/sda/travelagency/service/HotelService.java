@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.sda.travelagency.model.Hotel;
 import pl.sda.travelagency.repository.HotelRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,5 +20,9 @@ public class HotelService {
 
     public Hotel getHotelById(Long id){
         return hotelRepository.findById(id).get();
+    }
+
+    public List<Hotel> getHotelList(){
+        return hotelRepository.findAll();
     }
 }
