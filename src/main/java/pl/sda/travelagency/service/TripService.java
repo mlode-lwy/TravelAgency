@@ -26,4 +26,10 @@ public class TripService {
     public List<Trip> getAllTrips() {
         return tripRepository.findAll();
     }
+
+    public void addTrip(Trip trip) {
+
+        tripRepository.save(trip);
+
+    }
 }
