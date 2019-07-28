@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.sda.travelagency.model.Trip;
+import pl.sda.travelagency.model.TripType;
 import pl.sda.travelagency.service.TripService;
 
 /**
@@ -27,12 +28,13 @@ public class TripController {
     public String showNewTripForm(Model model) {
         Trip trip = new Trip();
         model.addAttribute("trip",trip);
+        model.addAttribute("tripType", TripType.values());
         return "trip_form";
     }
 
     @PostMapping("/trip/save")
     public String saveTrip(@ModelAttribute("trip") Trip trip) {
         tripService.addTrip(trip);
-        return "redirect:/index.html";
+        return "index";
     }
 }

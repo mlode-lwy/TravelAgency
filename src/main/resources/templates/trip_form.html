@@ -8,18 +8,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/app.css">
+    <link rel="stylesheet" th:href="@{/app.css}"/>
 
     <title>Admin add trip to database</title>
 </head>
 
-<body>
+<body class="main-b">
 
-<div class="container">
+<div class="container form-ground">
     <h1>Admin add trip to database</h1>
-</div>
-
-<div class="container">
     <form action="#" th:action="@{/trip/save}" th:object="${trip}" method="post">
 
         <input type="hidden" th:field="*{trip_id}">

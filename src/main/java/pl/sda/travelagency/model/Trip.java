@@ -3,11 +3,11 @@ package pl.sda.travelagency.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +28,23 @@ public class Trip {
     private Long hotel_id;
 
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime departureTime_to;
 
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime departureTime_from;
 
-    @NotBlank
+    @NotNull
     private Integer amountTripDays;
 
-    @NotBlank
     @Enumerated(EnumType.STRING)
     private TripType tripType;
 
-    @NotBlank
+    @NotNull
     private Double adultPrice;
 
-    @NotBlank
+    @NotNull
     private Double childPrice;
 
     @NotNull
