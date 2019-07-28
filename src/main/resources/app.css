@@ -33,3 +33,12 @@ body {
 .justify-content-center {
     align-content: center;
 }
+
+.main-b {
+    background-image: url(https://cdn.stocksnap.io/img-thumbs/960w/OYF2RHMKWN.jpg);
+    background-size: cover;
+}
+
+.form-ground {
+    background-color: whitesmoke;
+}
