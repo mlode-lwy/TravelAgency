@@ -1,5 +1,10 @@
 package pl.sda.travelagency.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
@@ -10,6 +15,9 @@ import java.util.List;
  */
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Continent {
 
     @Id
@@ -20,6 +28,7 @@ public class Continent {
     private String continent_name;
 
     @OneToMany(mappedBy = "continent")
+    @JsonIgnore
     private List<Country> listOfCountries = new ArrayList<>();
 
 }
