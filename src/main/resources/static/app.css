@@ -1,0 +1,44 @@
+body {
+    background-color: #dce6e4;
+}
+
+.rdp-name {
+    font-family: 'Hanalei', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.rdp-name:hover {
+    animation: bounce 1s;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    60%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}
+
+.justify-content-center {
+    align-content: center;
+}
+
+.main-b {
+    background-image: url(https://cdn.stocksnap.io/img-thumbs/960w/OYF2RHMKWN.jpg);
+    background-size: cover;
+}
+
+.form-ground {
+    background-color: whitesmoke;
+}

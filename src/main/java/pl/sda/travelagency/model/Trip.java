@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -28,22 +29,24 @@ public class Trip {
     private Long hotel_id;
 
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime departureTime_to;
     @NotNull
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime departureTime_from;
-    @NotBlank
-    private Integer AmoundTripDays;
-    @NotBlank
+    @NotNull
+    private Integer amountTripDays;
+    @NotNull
     @Enumerated(EnumType.STRING)
     private TripType tripType;
-    @NotBlank
+    @NotNull
     private Double adultPrice;
-    @NotBlank
+    @NotNull
     private Double childPrice;
     @NotNull
-    private boolean promoted;
+    private Boolean isPromoted;
     @NotNull
-    private Integer placesAmound;
+    private Integer placesAmount;
 
 
     @OneToMany(mappedBy = "trip")
