@@ -1,7 +1,7 @@
 package pl.sda.travelagency.model;
 
 /**
- * @author Remigiusz Zudzin
+ * @author mlode_wilki
  */
 public class Airport {
 }
