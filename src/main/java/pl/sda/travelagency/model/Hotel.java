@@ -1,5 +1,9 @@
 package pl.sda.travelagency.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
@@ -7,6 +11,9 @@ import javax.validation.constraints.NotBlank;
  * @author Remigiusz Zudzin
  */
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Hotel {
 
     @Id
@@ -18,9 +25,12 @@ public class Hotel {
     private Integer hotel_standard;
     @NotBlank
     private String hotel_description;
+    // lotnisko powrotne ZMIEN NAZWE
+    @NotBlank
+    private String airportFromName;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
+    @OneToOne
+    @JoinColumn(name = "airport_id")
+    private Airport airport;
 
 }
