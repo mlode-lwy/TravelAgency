@@ -36,6 +36,7 @@ public class UserController {
 
             return "register";
         }
+        userService.save(user);
         return "redirect:/trip";
     }
 }
