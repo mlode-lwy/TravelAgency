@@ -33,6 +33,8 @@ public class User {
     @Size(min = 6)
     private String password;
 
+    private Boolean isActivated = true;
+
     @Override
     public String toString() {
         return "User{" +

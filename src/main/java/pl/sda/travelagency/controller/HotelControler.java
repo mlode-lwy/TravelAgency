@@ -18,7 +18,7 @@ public class HotelControler {
         this.hotelService = hotelService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/hotel")
     public List<Hotel> dispalayHotelList(){
         return hotelService.getHotelList();
     }

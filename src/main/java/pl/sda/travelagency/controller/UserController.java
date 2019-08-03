@@ -33,10 +33,14 @@ public class UserController {
     @PostMapping("register")
     public String register(@ModelAttribute @Valid User user, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-
             return "register";
         }
         userService.save(user);
         return "redirect:/trip";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
     }
 }
